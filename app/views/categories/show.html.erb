@@ -2,19 +2,23 @@
 
 <%= link_to 'Add a new recipe', new_category_bookmark_path(@category) %>
 
-<ul>
-  <% @category.bookmarks.each do |bookmark| %>
+<% @category.bookmarks.each do |bookmark| %>
+  <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
+  <h3>
+    <%= bookmark.recipe.name %> |
     <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
-    <li>
-      <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
-      <%= bookmark.recipe.name %> |
-      <%= link_to 'Delete',
-        bookmark_path(bookmark),
-        data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
-      %>
-
-    </li>
+    <%= link_to 'Delete',
+      bookmark_path(bookmark),
+      data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+    %>
+  </h3>
+  <p>
+    <em><%= bookmark.recipe.description %></em>
+  </p>
+  <% if bookmark.recipe.rating.present? %>
+    <p><%= bookmark.recipe.rating %> <%= '✰' * bookmark.recipe.rating %></p>
   <% end %>
-</ul>
+<% end %>
+
 
 <%= link_to 'Return to all categories', root_path %>
