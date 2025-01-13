@@ -1,25 +1,39 @@
-<h1><%= @category.name %></h1>
+<div class="banner">
+  <h1><%= @category.name %></h1>
+</div>
 
-<%= link_to 'Add a new recipe', new_category_bookmark_path(@category) %>
-
-<% @category.bookmarks.each do |bookmark| %>
-  <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
-  <h3>
-    <%= bookmark.recipe.name %> |
-    <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
-    <%= link_to 'Delete',
-      bookmark_path(bookmark),
-      data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
-    %>
-  </h3>
-  <% if bookmark.recipe.rating.present? %>
-    <p><%= bookmark.recipe.rating %> <%= '✰' * bookmark.recipe.rating %></p>
-  <% end %>
-  <img src=<%= bookmark.recipe.image_url %> alt="<%= bookmark.recipe.name %>" width=40%>
-  <p>
-    <em><%= bookmark.recipe.description %></em>
-  </p>
-<% end %>
-
-
-<%= render 'shared/home_link' %>
+<div class="container">
+  <div class="d-flex justify-content-between py-3">
+    <%= link_to 'Add a new recipe', new_category_bookmark_path(@category), class: "btn btn-success" %>
+    <%= render 'shared/home_link'%>
+  </div>
+  <div class="d-flex">
+    <% @category.bookmarks.each do |bookmark| %>
+      <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
+      <div class="card m-2" style="width: 18rem;">
+        <img src="<%= bookmark.recipe.image_url %>" alt="<%= bookmark.recipe.name %>" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= bookmark.recipe.name %> |
+            <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
+            <%= link_to 'Delete',
+              bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+            %>
+          </h5>
+          <p class="card-text">
+            <%= bookmark.recipe.description %>
+          </p>
+        </div>
+        <div class="card-body d-flex justify-content-between">
+          <% if bookmark.comment.present? %>
+            <em>"<%= bookmark.comment %></em>
+          <% end %>
+          <% if bookmark.recipe.rating.present? %>
+            <%= bookmark.recipe.rating %> <%= '✰' * bookmark.recipe.rating %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
