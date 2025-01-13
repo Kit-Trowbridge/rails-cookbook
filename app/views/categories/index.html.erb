@@ -1,6 +1,9 @@
-<h1>All categories</h1>
+<div class="banner">
+  <h1>Categories</h1>
+</div>
 
-<%= link_to 'Add a new category', new_category_path %>
+
+<%= link_to 'Add a new category', new_category_path, class: "btn button" %>
 <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.name, category_path(category) %></li>
