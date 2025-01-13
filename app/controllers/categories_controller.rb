@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  # refactor with before_action
   def index
     @categories = Category.all
   end

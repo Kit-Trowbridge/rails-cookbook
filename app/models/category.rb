@@ -4,4 +4,6 @@ class Category < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   # - A category has many recipes through bookmarks
   has_many :recipes, through: :bookmarks
+
+  validates :name, presence: true
 end
