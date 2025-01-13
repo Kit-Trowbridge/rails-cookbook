@@ -5,3 +5,5 @@
   <%= f.input :comment %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Return to all #{@category.name} recipes", category_path(@category) %>
