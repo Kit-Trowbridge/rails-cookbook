@@ -14,10 +14,20 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    @category.save
-    redirect_to category_path(@category)
+    if @category.save
+      redirect_to category_path(@category)
+    else
+      # want to add different message
+      # currently says "Name can't be blank and Name has already been taken"
+      render :new, status: :unprocessable_entity
+    end
   end
 
+  # shouldn't we be able to delete a category?
+  def delete
+    @category = Category.find(params[:id])
+    @category.destroy
+  end
   private
 
   def category_params
