@@ -2,8 +2,19 @@
 
 <%= link_to 'Add a new recipe', new_category_bookmark_path(@category) %>
 
-<% @category.recipes.each do |recipe| %>
-  <p><%= recipe.name %></p>
-<% end %>
+<ul>
+  <% @category.bookmarks.each do |bookmark| %>
+    <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
+    <li>
+      <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
+      <%= bookmark.recipe.name %> |
+      <%= link_to 'Delete',
+        bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+      %>
+
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Return to all categories', root_path %>
