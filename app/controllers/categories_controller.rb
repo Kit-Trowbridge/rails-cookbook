@@ -1,12 +1,11 @@
 class CategoriesController < ApplicationController
-  # refactor with before_action
+  before_action :set_category, only: [:show, :delete]
+
   def index
     @categories = Category.all
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
+  def show; end
 
   def new
     @category = Category.new
@@ -25,10 +24,14 @@ class CategoriesController < ApplicationController
 
   # shouldn't we be able to delete a category?
   def delete
-    @category = Category.find(params[:id])
     @category.destroy
   end
+
   private
+
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   def category_params
     params.require(:category).permit(:name)
