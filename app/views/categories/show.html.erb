@@ -12,12 +12,13 @@
       data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
     %>
   </h3>
-  <p>
-    <em><%= bookmark.recipe.description %></em>
-  </p>
   <% if bookmark.recipe.rating.present? %>
     <p><%= bookmark.recipe.rating %> <%= '✰' * bookmark.recipe.rating %></p>
   <% end %>
+  <img src=<%= bookmark.recipe.image_url %> alt="<%= bookmark.recipe.name %>" width=40%>
+  <p>
+    <em><%= bookmark.recipe.description %></em>
+  </p>
 <% end %>
 
 
