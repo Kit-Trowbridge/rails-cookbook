@@ -4,8 +4,6 @@ class Bookmark < ApplicationRecord
   # - A bookmark belongs to a category
   belongs_to :category
 
-  # - A category must have a unique name.
-  validates :name, presence: true, uniqueness: true
   # - The comment of a bookmark cannot be shorter than 6 characters.
   validates :comment, length: { minimum: 6 }, allow_blank: true
 

@@ -5,5 +5,6 @@ class Category < ApplicationRecord
   # - A category has many recipes through bookmarks
   has_many :recipes, through: :bookmarks
 
+  # - A category must have a unique name.
   validates :name, presence: true, uniqueness: true
 end
