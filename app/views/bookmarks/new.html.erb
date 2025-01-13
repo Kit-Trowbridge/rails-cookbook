@@ -3,7 +3,7 @@
 <%= simple_form_for [@category, @bookmark] do |f| %>
   <%= f.association :recipe %>
   <%= f.input :comment %>
-  <%= f.submit %>
+  <%= f.submit 'Add' %>
 <% end %>
 
 <%= link_to "Return to all #{@category.name} recipes", category_path(@category) %>
