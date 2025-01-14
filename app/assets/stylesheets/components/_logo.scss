@@ -1,0 +1,10 @@
+#logo {
+  width: 150px;
+  filter: $drop-shadow;
+  border-radius: 2px;
+  outline: 1px solid black;
+
+  &:hover {
+    outline: 2px solid black;
+  }
+}
