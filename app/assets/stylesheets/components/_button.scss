@@ -5,6 +5,7 @@
   filter: $drop-shadow;
   transition: 0.2s ease;
   &:hover {
-    color: black;
+    border-color: $hot-pink;
+    color: $hot-pink;
   }
 }
