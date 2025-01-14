@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+}
+
+.fa-x {
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+  text-align: end;
+  // can I dry that up by making it a variable or component?
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
