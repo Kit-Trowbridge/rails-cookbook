@@ -1,9 +1,13 @@
-<h1>Add a new category:</h1>
+<div class="container">
 
-<%= simple_form_for @category do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image_url, label: 'Image URL' %>
-  <%= f.submit %>
-<% end %>
 
-<%= render 'shared/home_link' %>
+  <div class="new-form">
+    <h1>Add a new category:</h1>
+      <%= simple_form_for @category do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url, label: 'Image URL' %>
+        <%= f.submit %>
+      <% end %>
+  </div>
+  <%= render 'shared/home_link' %>
+</div>

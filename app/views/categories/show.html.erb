@@ -33,7 +33,7 @@
             </div>
           <% end %>
           <% if bookmark.recipe.rating.present? %>
-            <%= bookmark.recipe.rating %> <%= '✰' * bookmark.recipe.rating %>
+            <%= bookmark.recipe.rating %> <%= ('✰' * bookmark.recipe.rating) %>
           <% end %>
         </div>
 
