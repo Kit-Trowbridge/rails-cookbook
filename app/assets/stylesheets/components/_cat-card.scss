@@ -15,5 +15,8 @@
   filter: $drop-shadow;
   a {
     color: white;
-  }
+    &:hover {
+      color: $lime;
+    }
+  };
 }

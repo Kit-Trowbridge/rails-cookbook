@@ -1,0 +1,10 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+  filter: $drop-shadow;
+  transition: 0.2s ease;
+  &:hover {
+    color: black;
+  }
+}

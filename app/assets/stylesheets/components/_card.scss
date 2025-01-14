@@ -9,5 +9,8 @@
   text-align: end;
   // can I dry that up by making it a variable or component?
   color: white;
+  &:hover {
+    color: $hot-pink;
+  };
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }

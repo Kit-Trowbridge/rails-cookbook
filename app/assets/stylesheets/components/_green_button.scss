@@ -1,0 +1,6 @@
+.green-button {
+  background-color: $lime-light;
+  &:hover {
+    background-color: $lime;
+  }
+}
