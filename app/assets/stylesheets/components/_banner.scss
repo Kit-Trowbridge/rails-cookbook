@@ -5,7 +5,8 @@
   text-align: center;
   padding: 20px 40px;
   height: 250px;
-  background-image: image-url("banner-background.jpg");
+  // how do I add transparent image overlay?
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), image-url("banner-background.jpg");
   background-position: center;
   background-size: cover;
   color: white;
