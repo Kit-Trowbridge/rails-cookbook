@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
   color: black;
+  transition: 0.2s ease;
   &:hover {
     color: $hot-pink;
   }
