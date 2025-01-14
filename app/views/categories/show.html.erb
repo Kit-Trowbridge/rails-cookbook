@@ -11,18 +11,15 @@
     <% @category.bookmarks.each do |bookmark| %>
       <!-- Need to access the recipes through bookmarks in order for everything to be connected-->
       <div class="card m-2" style="width: 18rem;">
-        <i class="fa-solid fa-x">
-          <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
-          <%= link_to 'Delete',
-            bookmark_path(bookmark),
-            data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
-          %>
-        </i>
+        <!-- Want the delete link to go to the bookmark that uses this recipe and this category -->
+        <%= link_to ("<i class='fa-solid fa-x'></i>").html_safe ,
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+        %>
         <img src="<%= bookmark.recipe.image_url %>" alt="<%= bookmark.recipe.name %>" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">
-            <%= bookmark.recipe.name %> |
-
+            <%= bookmark.recipe.name %>
           </h5>
           <p class="card-text">
             <%= bookmark.recipe.description %>
