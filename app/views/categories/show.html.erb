@@ -33,7 +33,8 @@
             </div>
           <% end %>
           <% if bookmark.recipe.rating.present? %>
-            <%= bookmark.recipe.rating %> <%= ('✰' * bookmark.recipe.rating) %>
+            <!--Can add a class to an element like this using span-->
+            <%= "Rating: #{bookmark.recipe.rating}" %> <span class="star"><%= ('✰' * bookmark.recipe.rating) %></span>
           <% end %>
         </div>
 
