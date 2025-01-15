@@ -1,3 +1,5 @@
+<!--ISSUE WITH CARDS - ALL CARDS WILL BE AS LONG AS LONGEST CARD'S TEXT-->
+
 <div class="banner" style="background-image: url(<%= cl_image_path @category.photo.key if @category.photo.present? %>), url(<%= asset_path('banner_background.jpg') %>)">
   <h1><%= @category.name %></h1>
 </div>
