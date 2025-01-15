@@ -12,11 +12,11 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   margin: 10px;
   border-radius: 2px;
-  transition: 0.2s ease;
+  // transition: 0.2s ease;
   filter: $drop-shadow;
-  // &:hover {
-  //   outline: $black-outline;
-  // };
+  &:hover {
+    animation: expand 0.5s forwards;
+  };
   a {
     color: white;
     &:hover {
