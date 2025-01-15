@@ -54,6 +54,10 @@ def recipe_builder(id)
   Recipe.create({ name: recipe['strMeal'], description: recipe['strInstructions'], image_url: recipe['strMealThumb'], rating: rand(1 .. 10) })
 end
 
+# don't know how to simulate bookmark.create
+# def bookmark_builder()
+
+
 def bookmark_simulator(category)
   recipe_finder(category).each do |recipe|
     id = recipe['idMeal']
@@ -65,12 +69,5 @@ end
 
 bookmark_simulator(breakfast)
 bookmark_simulator(vegetarian)
-
-# recipes.each do |recipe|
-#   id = recipe['idMeal']
-#   new_recipe = recipe_builder(id)
-#   # need to make breakfast category instance
-#   breakfast.recipes << new_recipe
-# end
 
 puts "created #{Recipe.count} new recipes and #{Category.count} new categories"
