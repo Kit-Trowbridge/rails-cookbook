@@ -2,9 +2,9 @@
   width: 150px;
   filter: $drop-shadow;
   border-radius: 2px;
-  outline: 1px solid black;
+  border: $black-outline;
   transition: 0.1s ease;
   &:hover {
-    outline: 1.5px solid black;
+    border: 1.5px solid black;
   }
 }
