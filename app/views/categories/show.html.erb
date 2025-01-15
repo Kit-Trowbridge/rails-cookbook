@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(<%= cl_image_path @category.photo.key %>)">
+<div class="banner" style="background-image: url(<%= cl_image_path @category.photo.key if @category.photo.present? %>)">
   <h1><%= @category.name %></h1>
 </div>
 
